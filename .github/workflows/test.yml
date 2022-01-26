@@ -1,0 +1,14 @@
+on:
+  push:
+    tags:
+      - test
+name: Deploy website on push to test
+jobs:
+  production-web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2
+    - name: Update config files
+      run:  ./infrastructure/update-config-TEST.sh
