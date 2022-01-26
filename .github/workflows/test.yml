@@ -10,5 +10,7 @@ jobs:
     steps:
     - name: Get latest code
       uses: actions/checkout@v2
+    - name: test echo
+      run:  echo "TEST"
     - name: Update config files
       run:  ./infrastructure/update-config-TEST.sh
